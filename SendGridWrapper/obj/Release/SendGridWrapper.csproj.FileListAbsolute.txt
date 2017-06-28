@@ -1,0 +1,8 @@
+C:\VeluweGranen\SendGridWrapper\bin\Release\SendGridWrapper.dll
+C:\VeluweGranen\SendGridWrapper\bin\Release\SendGridWrapper.pdb
+C:\VeluweGranen\SendGridWrapper\bin\Release\SendGrid.CSharp.HTTP.Client.dll
+C:\VeluweGranen\SendGridWrapper\bin\Release\SendGrid.dll
+C:\VeluweGranen\SendGridWrapper\obj\Release\SendGridWrapper.dll
+C:\VeluweGranen\SendGridWrapper\obj\Release\SendGridWrapper.pdb
+C:\VeluweGranen\SendGridWrapper\bin\Release\Newtonsoft.Json.dll
+C:\VeluweGranen\SendGridWrapper\obj\Release\SendGridWrapper.csprojResolveAssemblyReference.cache

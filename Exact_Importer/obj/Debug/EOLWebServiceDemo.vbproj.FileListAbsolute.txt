@@ -1,0 +1,11 @@
+D:\VeluweGranen\Nieuw\obj\Debug\EOLWebServiceDemo.vbproj.GenerateResource.Cache
+D:\VeluweGranen\Nieuw\debug\ExactOnlineImporter.exe.config
+D:\VeluweGranen\Nieuw\debug\ExactOnlineImporter.exe
+D:\VeluweGranen\Nieuw\debug\ExactOnlineImporter.pdb
+D:\VeluweGranen\Nieuw\debug\ExactOnlineImporter.xml
+D:\VeluweGranen\Nieuw\obj\Debug\ExactOnlineImporter.dlgMessages.resources
+D:\VeluweGranen\Nieuw\obj\Debug\ExactOnlineImporter.frmDemo.resources
+D:\VeluweGranen\Nieuw\obj\Debug\ExactOnlineImporter.Resources.resources
+D:\VeluweGranen\Nieuw\obj\Debug\ExactOnlineImporter.exe
+D:\VeluweGranen\Nieuw\obj\Debug\ExactOnlineImporter.xml
+D:\VeluweGranen\Nieuw\obj\Debug\ExactOnlineImporter.pdb

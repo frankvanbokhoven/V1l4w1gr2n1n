@@ -1,0 +1,711 @@
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmImporterMain
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        If disposing AndAlso components IsNot Nothing Then
+            components.Dispose()
+        End If
+        MyBase.Dispose(disposing)
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmImporterMain))
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.gbCredentials = New System.Windows.Forms.GroupBox()
+        Me.txtApplicationKey = New System.Windows.Forms.TextBox()
+        Me.lblApplicationKey = New System.Windows.Forms.Label()
+        Me.lblPassword = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.txtUserName = New System.Windows.Forms.TextBox()
+        Me.lblUserName = New System.Windows.Forms.Label()
+        Me.gbProxy = New System.Windows.Forms.GroupBox()
+        Me.lblPasswordProxy = New System.Windows.Forms.Label()
+        Me.txtPasswordProxy = New System.Windows.Forms.TextBox()
+        Me.lblUserNameProxy = New System.Windows.Forms.Label()
+        Me.txtUserNameProxy = New System.Windows.Forms.TextBox()
+        Me.lblDomainProxy = New System.Windows.Forms.Label()
+        Me.txtDomainProxy = New System.Windows.Forms.TextBox()
+        Me.lblPort = New System.Windows.Forms.Label()
+        Me.lblProxyServer = New System.Windows.Forms.Label()
+        Me.txtPort = New System.Windows.Forms.TextBox()
+        Me.txtProxyServer = New System.Windows.Forms.TextBox()
+        Me.chkProxy = New System.Windows.Forms.CheckBox()
+        Me.gbMain = New System.Windows.Forms.GroupBox()
+        Me.lblURL = New System.Windows.Forms.Label()
+        Me.txtURL = New System.Windows.Forms.TextBox()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.lblDivision = New System.Windows.Forms.Label()
+        Me.cmbDivision = New System.Windows.Forms.ComboBox()
+        Me.dlgFile = New System.Windows.Forms.OpenFileDialog()
+        Me.TabImportExport = New System.Windows.Forms.TabControl()
+        Me.TabSingle = New System.Windows.Forms.TabPage()
+        Me.gbSingle = New System.Windows.Forms.GroupBox()
+        Me.chkOpenAttachments = New System.Windows.Forms.CheckBox()
+        Me.btnSelectFile = New System.Windows.Forms.Button()
+        Me.txtFile = New System.Windows.Forms.TextBox()
+        Me.lblFile = New System.Windows.Forms.Label()
+        Me.lblTopic = New System.Windows.Forms.Label()
+        Me.cmbTopic = New System.Windows.Forms.ComboBox()
+        Me.lblDirection = New System.Windows.Forms.Label()
+        Me.cmbDirection = New System.Windows.Forms.ComboBox()
+        Me.gbParameters = New System.Windows.Forms.GroupBox()
+        Me.TabMultiple = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtProcessedDir = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtErrorDir = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.gbMultiple = New System.Windows.Forms.GroupBox()
+        Me.btnSelectDir = New System.Windows.Forms.Button()
+        Me.txtUploadDir = New System.Windows.Forms.TextBox()
+        Me.lblUploadDir = New System.Windows.Forms.Label()
+        Me.dlgDir = New System.Windows.Forms.FolderBrowserDialog()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.gbCredentials.SuspendLayout()
+        Me.gbProxy.SuspendLayout()
+        Me.gbMain.SuspendLayout()
+        Me.TabImportExport.SuspendLayout()
+        Me.TabSingle.SuspendLayout()
+        Me.gbSingle.SuspendLayout()
+        Me.TabMultiple.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.gbMultiple.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'btnStart
+        '
+        Me.btnStart.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnStart.Location = New System.Drawing.Point(399, 530)
+        Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
+        Me.btnStart.TabIndex = 22
+        Me.btnStart.Text = "&Start"
+        Me.btnStart.UseVisualStyleBackColor = True
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.Location = New System.Drawing.Point(478, 530)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.TabIndex = 23
+        Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
+        '
+        'gbCredentials
+        '
+        Me.gbCredentials.Controls.Add(Me.txtApplicationKey)
+        Me.gbCredentials.Controls.Add(Me.lblApplicationKey)
+        Me.gbCredentials.Controls.Add(Me.lblPassword)
+        Me.gbCredentials.Controls.Add(Me.txtPassword)
+        Me.gbCredentials.Controls.Add(Me.txtUserName)
+        Me.gbCredentials.Controls.Add(Me.lblUserName)
+        Me.gbCredentials.Location = New System.Drawing.Point(7, 7)
+        Me.gbCredentials.Name = "gbCredentials"
+        Me.gbCredentials.Size = New System.Drawing.Size(550, 109)
+        Me.gbCredentials.TabIndex = 1
+        Me.gbCredentials.TabStop = False
+        Me.gbCredentials.Text = "Credentials"
+        '
+        'txtApplicationKey
+        '
+        Me.txtApplicationKey.Location = New System.Drawing.Point(194, 76)
+        Me.txtApplicationKey.Name = "txtApplicationKey"
+        Me.txtApplicationKey.Size = New System.Drawing.Size(213, 20)
+        Me.txtApplicationKey.TabIndex = 7
+        Me.txtApplicationKey.Visible = False
+        '
+        'lblApplicationKey
+        '
+        Me.lblApplicationKey.AutoSize = True
+        Me.lblApplicationKey.Location = New System.Drawing.Point(20, 79)
+        Me.lblApplicationKey.Name = "lblApplicationKey"
+        Me.lblApplicationKey.Size = New System.Drawing.Size(79, 13)
+        Me.lblApplicationKey.TabIndex = 38
+        Me.lblApplicationKey.Text = "Application key"
+        Me.lblApplicationKey.Visible = False
+        '
+        'lblPassword
+        '
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Location = New System.Drawing.Point(20, 53)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(53, 13)
+        Me.lblPassword.TabIndex = 37
+        Me.lblPassword.Text = "Password"
+        '
+        'txtPassword
+        '
+        Me.txtPassword.Location = New System.Drawing.Point(194, 50)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.Size = New System.Drawing.Size(213, 20)
+        Me.txtPassword.TabIndex = 6
+        Me.txtPassword.UseSystemPasswordChar = True
+        '
+        'txtUserName
+        '
+        Me.txtUserName.Location = New System.Drawing.Point(194, 23)
+        Me.txtUserName.Name = "txtUserName"
+        Me.txtUserName.Size = New System.Drawing.Size(213, 20)
+        Me.txtUserName.TabIndex = 5
+        '
+        'lblUserName
+        '
+        Me.lblUserName.AutoSize = True
+        Me.lblUserName.Location = New System.Drawing.Point(20, 26)
+        Me.lblUserName.Name = "lblUserName"
+        Me.lblUserName.Size = New System.Drawing.Size(58, 13)
+        Me.lblUserName.TabIndex = 36
+        Me.lblUserName.Text = "User name"
+        '
+        'gbProxy
+        '
+        Me.gbProxy.Controls.Add(Me.lblPasswordProxy)
+        Me.gbProxy.Controls.Add(Me.txtPasswordProxy)
+        Me.gbProxy.Controls.Add(Me.lblUserNameProxy)
+        Me.gbProxy.Controls.Add(Me.txtUserNameProxy)
+        Me.gbProxy.Controls.Add(Me.lblDomainProxy)
+        Me.gbProxy.Controls.Add(Me.txtDomainProxy)
+        Me.gbProxy.Controls.Add(Me.lblPort)
+        Me.gbProxy.Controls.Add(Me.lblProxyServer)
+        Me.gbProxy.Controls.Add(Me.txtPort)
+        Me.gbProxy.Controls.Add(Me.txtProxyServer)
+        Me.gbProxy.Controls.Add(Me.chkProxy)
+        Me.gbProxy.Location = New System.Drawing.Point(7, 425)
+        Me.gbProxy.Name = "gbProxy"
+        Me.gbProxy.Size = New System.Drawing.Size(550, 102)
+        Me.gbProxy.TabIndex = 2
+        Me.gbProxy.TabStop = False
+        Me.gbProxy.Text = "Proxy server"
+        Me.gbProxy.Visible = False
+        '
+        'lblPasswordProxy
+        '
+        Me.lblPasswordProxy.AutoSize = True
+        Me.lblPasswordProxy.Location = New System.Drawing.Point(318, 77)
+        Me.lblPasswordProxy.Name = "lblPasswordProxy"
+        Me.lblPasswordProxy.Size = New System.Drawing.Size(53, 13)
+        Me.lblPasswordProxy.TabIndex = 34
+        Me.lblPasswordProxy.Text = "Password"
+        Me.lblPasswordProxy.Visible = False
+        '
+        'txtPasswordProxy
+        '
+        Me.txtPasswordProxy.Location = New System.Drawing.Point(423, 74)
+        Me.txtPasswordProxy.Name = "txtPasswordProxy"
+        Me.txtPasswordProxy.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPasswordProxy.Size = New System.Drawing.Size(84, 20)
+        Me.txtPasswordProxy.TabIndex = 13
+        Me.txtPasswordProxy.UseSystemPasswordChar = True
+        Me.txtPasswordProxy.WordWrap = False
+        '
+        'lblUserNameProxy
+        '
+        Me.lblUserNameProxy.AutoSize = True
+        Me.lblUserNameProxy.Location = New System.Drawing.Point(318, 52)
+        Me.lblUserNameProxy.Name = "lblUserNameProxy"
+        Me.lblUserNameProxy.Size = New System.Drawing.Size(58, 13)
+        Me.lblUserNameProxy.TabIndex = 33
+        Me.lblUserNameProxy.Text = "User name"
+        Me.lblUserNameProxy.Visible = False
+        '
+        'txtUserNameProxy
+        '
+        Me.txtUserNameProxy.Location = New System.Drawing.Point(423, 48)
+        Me.txtUserNameProxy.Name = "txtUserNameProxy"
+        Me.txtUserNameProxy.Size = New System.Drawing.Size(84, 20)
+        Me.txtUserNameProxy.TabIndex = 12
+        Me.txtUserNameProxy.Visible = False
+        '
+        'lblDomainProxy
+        '
+        Me.lblDomainProxy.AutoSize = True
+        Me.lblDomainProxy.Location = New System.Drawing.Point(318, 28)
+        Me.lblDomainProxy.Name = "lblDomainProxy"
+        Me.lblDomainProxy.Size = New System.Drawing.Size(43, 13)
+        Me.lblDomainProxy.TabIndex = 35
+        Me.lblDomainProxy.Text = "Domain"
+        Me.lblDomainProxy.Visible = False
+        '
+        'txtDomainProxy
+        '
+        Me.txtDomainProxy.Location = New System.Drawing.Point(423, 25)
+        Me.txtDomainProxy.Name = "txtDomainProxy"
+        Me.txtDomainProxy.Size = New System.Drawing.Size(84, 20)
+        Me.txtDomainProxy.TabIndex = 11
+        Me.txtDomainProxy.Visible = False
+        '
+        'lblPort
+        '
+        Me.lblPort.AutoSize = True
+        Me.lblPort.Location = New System.Drawing.Point(20, 79)
+        Me.lblPort.Name = "lblPort"
+        Me.lblPort.Size = New System.Drawing.Size(26, 13)
+        Me.lblPort.TabIndex = 37
+        Me.lblPort.Text = "Port"
+        Me.lblPort.Visible = False
+        '
+        'lblProxyServer
+        '
+        Me.lblProxyServer.AutoSize = True
+        Me.lblProxyServer.Location = New System.Drawing.Point(20, 52)
+        Me.lblProxyServer.Name = "lblProxyServer"
+        Me.lblProxyServer.Size = New System.Drawing.Size(65, 13)
+        Me.lblProxyServer.TabIndex = 36
+        Me.lblProxyServer.Text = "Proxy server"
+        Me.lblProxyServer.Visible = False
+        '
+        'txtPort
+        '
+        Me.txtPort.Location = New System.Drawing.Point(194, 74)
+        Me.txtPort.Name = "txtPort"
+        Me.txtPort.Size = New System.Drawing.Size(39, 20)
+        Me.txtPort.TabIndex = 10
+        Me.txtPort.Visible = False
+        '
+        'txtProxyServer
+        '
+        Me.txtProxyServer.Location = New System.Drawing.Point(194, 48)
+        Me.txtProxyServer.Name = "txtProxyServer"
+        Me.txtProxyServer.Size = New System.Drawing.Size(75, 20)
+        Me.txtProxyServer.TabIndex = 9
+        Me.txtProxyServer.Visible = False
+        '
+        'chkProxy
+        '
+        Me.chkProxy.AutoSize = True
+        Me.chkProxy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.chkProxy.Location = New System.Drawing.Point(23, 25)
+        Me.chkProxy.Name = "chkProxy"
+        Me.chkProxy.Size = New System.Drawing.Size(105, 17)
+        Me.chkProxy.TabIndex = 8
+        Me.chkProxy.Text = "Use proxy server"
+        Me.chkProxy.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.chkProxy.UseVisualStyleBackColor = True
+        '
+        'gbMain
+        '
+        Me.gbMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.gbMain.Controls.Add(Me.lblURL)
+        Me.gbMain.Controls.Add(Me.txtURL)
+        Me.gbMain.Controls.Add(Me.btnRefresh)
+        Me.gbMain.Controls.Add(Me.lblDivision)
+        Me.gbMain.Controls.Add(Me.cmbDivision)
+        Me.gbMain.Location = New System.Drawing.Point(7, 122)
+        Me.gbMain.Name = "gbMain"
+        Me.gbMain.Size = New System.Drawing.Size(550, 75)
+        Me.gbMain.TabIndex = 3
+        Me.gbMain.TabStop = False
+        '
+        'lblURL
+        '
+        Me.lblURL.AutoSize = True
+        Me.lblURL.Location = New System.Drawing.Point(20, 23)
+        Me.lblURL.Name = "lblURL"
+        Me.lblURL.Size = New System.Drawing.Size(29, 13)
+        Me.lblURL.TabIndex = 18
+        Me.lblURL.Text = "URL"
+        '
+        'txtURL
+        '
+        Me.txtURL.Location = New System.Drawing.Point(194, 19)
+        Me.txtURL.Name = "txtURL"
+        Me.txtURL.Size = New System.Drawing.Size(313, 20)
+        Me.txtURL.TabIndex = 14
+        Me.txtURL.Text = "https://start.exactonline.nl"
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.BackgroundImage = CType(resources.GetObject("btnRefresh.BackgroundImage"), System.Drawing.Image)
+        Me.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnRefresh.Location = New System.Drawing.Point(513, 19)
+        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(22, 22)
+        Me.btnRefresh.TabIndex = 15
+        Me.btnRefresh.UseVisualStyleBackColor = False
+        '
+        'lblDivision
+        '
+        Me.lblDivision.AutoSize = True
+        Me.lblDivision.Location = New System.Drawing.Point(20, 49)
+        Me.lblDivision.Name = "lblDivision"
+        Me.lblDivision.Size = New System.Drawing.Size(72, 13)
+        Me.lblDivision.TabIndex = 12
+        Me.lblDivision.Text = "Administration"
+        '
+        'cmbDivision
+        '
+        Me.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDivision.FormattingEnabled = True
+        Me.cmbDivision.Location = New System.Drawing.Point(194, 45)
+        Me.cmbDivision.Name = "cmbDivision"
+        Me.cmbDivision.Size = New System.Drawing.Size(313, 21)
+        Me.cmbDivision.TabIndex = 16
+        '
+        'dlgFile
+        '
+        Me.dlgFile.CheckFileExists = False
+        Me.dlgFile.InitialDirectory = ".\"
+        '
+        'TabImportExport
+        '
+        Me.TabImportExport.Controls.Add(Me.TabSingle)
+        Me.TabImportExport.Controls.Add(Me.TabMultiple)
+        Me.TabImportExport.Location = New System.Drawing.Point(7, 203)
+        Me.TabImportExport.Name = "TabImportExport"
+        Me.TabImportExport.SelectedIndex = 0
+        Me.TabImportExport.Size = New System.Drawing.Size(550, 216)
+        Me.TabImportExport.TabIndex = 25
+        '
+        'TabSingle
+        '
+        Me.TabSingle.BackColor = System.Drawing.Color.Transparent
+        Me.TabSingle.Controls.Add(Me.gbSingle)
+        Me.TabSingle.Controls.Add(Me.gbParameters)
+        Me.TabSingle.Location = New System.Drawing.Point(4, 22)
+        Me.TabSingle.Name = "TabSingle"
+        Me.TabSingle.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabSingle.Size = New System.Drawing.Size(542, 190)
+        Me.TabSingle.TabIndex = 0
+        Me.TabSingle.Text = "Single upload/download"
+        '
+        'gbSingle
+        '
+        Me.gbSingle.Controls.Add(Me.chkOpenAttachments)
+        Me.gbSingle.Controls.Add(Me.btnSelectFile)
+        Me.gbSingle.Controls.Add(Me.txtFile)
+        Me.gbSingle.Controls.Add(Me.lblFile)
+        Me.gbSingle.Controls.Add(Me.lblTopic)
+        Me.gbSingle.Controls.Add(Me.cmbTopic)
+        Me.gbSingle.Controls.Add(Me.lblDirection)
+        Me.gbSingle.Controls.Add(Me.cmbDirection)
+        Me.gbSingle.Location = New System.Drawing.Point(6, 6)
+        Me.gbSingle.Name = "gbSingle"
+        Me.gbSingle.Size = New System.Drawing.Size(530, 116)
+        Me.gbSingle.TabIndex = 26
+        Me.gbSingle.TabStop = False
+        '
+        'chkOpenAttachments
+        '
+        Me.chkOpenAttachments.AutoSize = True
+        Me.chkOpenAttachments.Location = New System.Drawing.Point(183, 93)
+        Me.chkOpenAttachments.Name = "chkOpenAttachments"
+        Me.chkOpenAttachments.Size = New System.Drawing.Size(247, 17)
+        Me.chkOpenAttachments.TabIndex = 37
+        Me.chkOpenAttachments.Text = "Save and open attachments after downloading"
+        Me.chkOpenAttachments.UseVisualStyleBackColor = True
+        '
+        'btnSelectFile
+        '
+        Me.btnSelectFile.BackgroundImage = CType(resources.GetObject("btnSelectFile.BackgroundImage"), System.Drawing.Image)
+        Me.btnSelectFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSelectFile.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSelectFile.Location = New System.Drawing.Point(502, 65)
+        Me.btnSelectFile.Name = "btnSelectFile"
+        Me.btnSelectFile.Size = New System.Drawing.Size(22, 22)
+        Me.btnSelectFile.TabIndex = 36
+        Me.btnSelectFile.UseVisualStyleBackColor = True
+        '
+        'txtFile
+        '
+        Me.txtFile.Location = New System.Drawing.Point(183, 67)
+        Me.txtFile.Name = "txtFile"
+        Me.txtFile.Size = New System.Drawing.Size(313, 20)
+        Me.txtFile.TabIndex = 34
+        '
+        'lblFile
+        '
+        Me.lblFile.AutoSize = True
+        Me.lblFile.Location = New System.Drawing.Point(10, 74)
+        Me.lblFile.Name = "lblFile"
+        Me.lblFile.Size = New System.Drawing.Size(23, 13)
+        Me.lblFile.TabIndex = 35
+        Me.lblFile.Text = "File"
+        '
+        'lblTopic
+        '
+        Me.lblTopic.AutoSize = True
+        Me.lblTopic.Location = New System.Drawing.Point(10, 21)
+        Me.lblTopic.Name = "lblTopic"
+        Me.lblTopic.Size = New System.Drawing.Size(34, 13)
+        Me.lblTopic.TabIndex = 30
+        Me.lblTopic.Text = "Topic"
+        '
+        'cmbTopic
+        '
+        Me.cmbTopic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTopic.FormattingEnabled = True
+        Me.cmbTopic.Location = New System.Drawing.Point(184, 13)
+        Me.cmbTopic.Name = "cmbTopic"
+        Me.cmbTopic.Size = New System.Drawing.Size(313, 21)
+        Me.cmbTopic.TabIndex = 32
+        '
+        'lblDirection
+        '
+        Me.lblDirection.AutoSize = True
+        Me.lblDirection.Location = New System.Drawing.Point(10, 48)
+        Me.lblDirection.Name = "lblDirection"
+        Me.lblDirection.Size = New System.Drawing.Size(49, 13)
+        Me.lblDirection.TabIndex = 31
+        Me.lblDirection.Text = "Direction"
+        '
+        'cmbDirection
+        '
+        Me.cmbDirection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbDirection.FormattingEnabled = True
+        Me.cmbDirection.Location = New System.Drawing.Point(184, 40)
+        Me.cmbDirection.Name = "cmbDirection"
+        Me.cmbDirection.Size = New System.Drawing.Size(313, 21)
+        Me.cmbDirection.TabIndex = 33
+        '
+        'gbParameters
+        '
+        Me.gbParameters.Location = New System.Drawing.Point(6, 128)
+        Me.gbParameters.Name = "gbParameters"
+        Me.gbParameters.Size = New System.Drawing.Size(530, 55)
+        Me.gbParameters.TabIndex = 27
+        Me.gbParameters.TabStop = False
+        Me.gbParameters.Text = "Parameters"
+        '
+        'TabMultiple
+        '
+        Me.TabMultiple.BackColor = System.Drawing.Color.Transparent
+        Me.TabMultiple.Controls.Add(Me.GroupBox1)
+        Me.TabMultiple.Controls.Add(Me.GroupBox2)
+        Me.TabMultiple.Controls.Add(Me.gbMultiple)
+        Me.TabMultiple.Location = New System.Drawing.Point(4, 22)
+        Me.TabMultiple.Name = "TabMultiple"
+        Me.TabMultiple.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabMultiple.Size = New System.Drawing.Size(542, 190)
+        Me.TabMultiple.TabIndex = 1
+        Me.TabMultiple.Text = "Multiple upload"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.txtProcessedDir)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 59)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(536, 72)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Location = New System.Drawing.Point(506, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(22, 22)
+        Me.Button1.TabIndex = 7
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txtProcessedDir
+        '
+        Me.txtProcessedDir.Location = New System.Drawing.Point(187, 19)
+        Me.txtProcessedDir.Name = "txtProcessedDir"
+        Me.txtProcessedDir.Size = New System.Drawing.Size(313, 20)
+        Me.txtProcessedDir.TabIndex = 6
+        Me.txtProcessedDir.Text = "D:\VeluweGranen\ExactFiles\Processed"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(57, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Processed"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Button2)
+        Me.GroupBox2.Controls.Add(Me.txtErrorDir)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 131)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(536, 56)
+        Me.GroupBox2.TabIndex = 7
+        Me.GroupBox2.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Location = New System.Drawing.Point(506, 17)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(22, 22)
+        Me.Button2.TabIndex = 7
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'txtErrorDir
+        '
+        Me.txtErrorDir.Location = New System.Drawing.Point(187, 19)
+        Me.txtErrorDir.Name = "txtErrorDir"
+        Me.txtErrorDir.Size = New System.Drawing.Size(313, 20)
+        Me.txtErrorDir.TabIndex = 6
+        Me.txtErrorDir.Text = "D:\VeluweGranen\ExactFiles\Processed"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(13, 26)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Error directory"
+        '
+        'gbMultiple
+        '
+        Me.gbMultiple.Controls.Add(Me.btnSelectDir)
+        Me.gbMultiple.Controls.Add(Me.txtUploadDir)
+        Me.gbMultiple.Controls.Add(Me.lblUploadDir)
+        Me.gbMultiple.Dock = System.Windows.Forms.DockStyle.Top
+        Me.gbMultiple.Location = New System.Drawing.Point(3, 3)
+        Me.gbMultiple.Name = "gbMultiple"
+        Me.gbMultiple.Size = New System.Drawing.Size(536, 56)
+        Me.gbMultiple.TabIndex = 3
+        Me.gbMultiple.TabStop = False
+        '
+        'btnSelectDir
+        '
+        Me.btnSelectDir.BackgroundImage = CType(resources.GetObject("btnSelectDir.BackgroundImage"), System.Drawing.Image)
+        Me.btnSelectDir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSelectDir.Location = New System.Drawing.Point(506, 17)
+        Me.btnSelectDir.Name = "btnSelectDir"
+        Me.btnSelectDir.Size = New System.Drawing.Size(22, 22)
+        Me.btnSelectDir.TabIndex = 7
+        Me.btnSelectDir.UseVisualStyleBackColor = True
+        '
+        'txtUploadDir
+        '
+        Me.txtUploadDir.Location = New System.Drawing.Point(187, 19)
+        Me.txtUploadDir.Name = "txtUploadDir"
+        Me.txtUploadDir.Size = New System.Drawing.Size(313, 20)
+        Me.txtUploadDir.TabIndex = 6
+        '
+        'lblUploadDir
+        '
+        Me.lblUploadDir.AutoSize = True
+        Me.lblUploadDir.Location = New System.Drawing.Point(13, 26)
+        Me.lblUploadDir.Name = "lblUploadDir"
+        Me.lblUploadDir.Size = New System.Drawing.Size(84, 13)
+        Me.lblUploadDir.TabIndex = 5
+        Me.lblUploadDir.Text = "Upload directory"
+        '
+        'frmImporterMain
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(559, 595)
+        Me.Controls.Add(Me.TabImportExport)
+        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnStart)
+        Me.Controls.Add(Me.gbProxy)
+        Me.Controls.Add(Me.gbCredentials)
+        Me.Controls.Add(Me.gbMain)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.Name = "frmImporterMain"
+        Me.Text = "Exact Online import/export"
+        Me.gbCredentials.ResumeLayout(False)
+        Me.gbCredentials.PerformLayout()
+        Me.gbProxy.ResumeLayout(False)
+        Me.gbProxy.PerformLayout()
+        Me.gbMain.ResumeLayout(False)
+        Me.gbMain.PerformLayout()
+        Me.TabImportExport.ResumeLayout(False)
+        Me.TabSingle.ResumeLayout(False)
+        Me.gbSingle.ResumeLayout(False)
+        Me.gbSingle.PerformLayout()
+        Me.TabMultiple.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.gbMultiple.ResumeLayout(False)
+        Me.gbMultiple.PerformLayout()
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents btnStart As System.Windows.Forms.Button
+    Friend WithEvents btnCancel As System.Windows.Forms.Button
+    Friend WithEvents gbCredentials As System.Windows.Forms.GroupBox
+    Friend WithEvents gbProxy As System.Windows.Forms.GroupBox
+    Friend WithEvents gbMain As System.Windows.Forms.GroupBox
+    Friend WithEvents lblPasswordProxy As System.Windows.Forms.Label
+    Friend WithEvents txtPasswordProxy As System.Windows.Forms.TextBox
+    Friend WithEvents lblUserNameProxy As System.Windows.Forms.Label
+    Friend WithEvents txtUserNameProxy As System.Windows.Forms.TextBox
+    Friend WithEvents lblDomainProxy As System.Windows.Forms.Label
+    Friend WithEvents txtDomainProxy As System.Windows.Forms.TextBox
+    Friend WithEvents lblPort As System.Windows.Forms.Label
+    Friend WithEvents lblProxyServer As System.Windows.Forms.Label
+    Friend WithEvents txtPort As System.Windows.Forms.TextBox
+    Friend WithEvents txtProxyServer As System.Windows.Forms.TextBox
+    Friend WithEvents chkProxy As System.Windows.Forms.CheckBox
+    Friend WithEvents lblURL As System.Windows.Forms.Label
+    Friend WithEvents txtURL As System.Windows.Forms.TextBox
+    Friend WithEvents btnRefresh As System.Windows.Forms.Button
+    Friend WithEvents lblDivision As System.Windows.Forms.Label
+    Friend WithEvents cmbDivision As System.Windows.Forms.ComboBox
+    Friend WithEvents lblPassword As System.Windows.Forms.Label
+    Friend WithEvents txtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents txtUserName As System.Windows.Forms.TextBox
+    Friend WithEvents lblUserName As System.Windows.Forms.Label
+    Friend WithEvents dlgFile As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents txtApplicationKey As System.Windows.Forms.TextBox
+    Friend WithEvents lblApplicationKey As System.Windows.Forms.Label
+    Friend WithEvents TabImportExport As System.Windows.Forms.TabControl
+    Friend WithEvents TabSingle As System.Windows.Forms.TabPage
+    Friend WithEvents gbParameters As System.Windows.Forms.GroupBox
+    Friend WithEvents TabMultiple As System.Windows.Forms.TabPage
+    Friend WithEvents dlgDir As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents gbSingle As System.Windows.Forms.GroupBox
+    Friend WithEvents chkOpenAttachments As System.Windows.Forms.CheckBox
+    Friend WithEvents btnSelectFile As System.Windows.Forms.Button
+    Friend WithEvents txtFile As System.Windows.Forms.TextBox
+    Friend WithEvents lblFile As System.Windows.Forms.Label
+    Friend WithEvents lblTopic As System.Windows.Forms.Label
+    Friend WithEvents cmbTopic As System.Windows.Forms.ComboBox
+    Friend WithEvents lblDirection As System.Windows.Forms.Label
+    Friend WithEvents cmbDirection As System.Windows.Forms.ComboBox
+    Friend WithEvents gbMultiple As System.Windows.Forms.GroupBox
+    Friend WithEvents btnSelectDir As System.Windows.Forms.Button
+    Friend WithEvents txtUploadDir As System.Windows.Forms.TextBox
+    Friend WithEvents lblUploadDir As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents txtProcessedDir As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents txtErrorDir As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+
+End Class

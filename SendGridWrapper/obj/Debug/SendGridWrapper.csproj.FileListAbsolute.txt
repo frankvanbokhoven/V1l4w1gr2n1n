@@ -1,0 +1,7 @@
+C:\VeluweGranen\SendGridWrapper\bin\Debug\SendGridWrapper.dll
+C:\VeluweGranen\SendGridWrapper\bin\Debug\SendGridWrapper.pdb
+C:\VeluweGranen\SendGridWrapper\bin\Debug\SendGrid.CSharp.HTTP.Client.dll
+C:\VeluweGranen\SendGridWrapper\bin\Debug\SendGrid.dll
+C:\VeluweGranen\SendGridWrapper\bin\Debug\Newtonsoft.Json.dll
+C:\VeluweGranen\SendGridWrapper\obj\Debug\SendGridWrapper.dll
+C:\VeluweGranen\SendGridWrapper\obj\Debug\SendGridWrapper.pdb
