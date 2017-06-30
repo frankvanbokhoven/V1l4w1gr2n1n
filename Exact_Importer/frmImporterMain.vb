@@ -8,6 +8,10 @@ Imports System.Threading.Thread
 Imports System.Net.Mail
 Imports SendGridWrapper.SendGridWrapper
 Imports ExactOnline.Client.OAuth.OAuthClient
+Imports ExactOAuth
+Imports ExactOAuth.OAuthClient
+
+
 
 
 
@@ -74,7 +78,7 @@ Public Class frmImporterMain
             Dim divisionValue As String = ConfigurationManager.AppSettings("Administration")
             RunSilent = ConfigurationManager.AppSettings("RunAutomatic").ToLower = "true" ' draai de app op de achtergrond als RunAutomatic op true staat
 
-            ConfigurationManager.AppSettings("mailto").
+            '      ConfigurationManager.AppSettings("mailto")
             'tbv mail
             mailto = ConfigurationManager.AppSettings("mailto")
             mailcc = ConfigurationManager.AppSettings("mailcc")
@@ -636,10 +640,16 @@ Public Class frmImporterMain
         Dim dr As DotNetOpenAuth.OAuth2.AuthorizationServerDescription
         dr = New DotNetOpenAuth.OAuth2.AuthorizationServerDescription
 
-        Dim ur As Uri = New Uri("test/fds")
-        Dim loginfrm As ExactOnline.Client.OAuth.OAuthClient = New ExactOnline.Client.OAuth.OAuthClient(dr, "id", "secret", ur)
-        Dim state As DotNetOpenAuth.OAuth2.IAuthorizationState
-        loginfrm.Authorize(state, "secret")
+        Dim asd As DotNetOpenAuth.OAuth2.AuthorizationServerDescription
+        asd.AuthorizationEndpoint = New Uri("https://start.exactonline.nl/api/oauth2/auth")
+        asd.TokenEndpoint = New Uri("https://start.exactonline.nl/oauth2/token")
+
+        Dim oc As OAuthClient = New OAuthClient(asd, "{cb715f5d-fe30-4595-81ff-c00b414a73e2", "dtsaOssnJJhY", New Uri("http://www.veluwegranen.nl"))
+
+        '  Dim ur As Uri = New Uri("test/fds")
+        '   Dim loginfrm As ExactOnline.Client.OAuth.OAuthClient = New ExactOnline.Client.OAuth.OAuthClient(dr, "id", "secret", ur)
+        '  Dim state As DotNetOpenAuth.OAuth2.IAuthorizationState
+        ' //   loginfrm.Authorize(state, "secret")
 
 
 

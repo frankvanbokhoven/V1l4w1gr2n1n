@@ -12,7 +12,7 @@
     <AssemblyName>ExactOnlineImporter</AssemblyName>
     <MyType>WindowsForms</MyType>
     <OptionStrict>On</OptionStrict>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
@@ -235,6 +235,10 @@
     <Content Include="VeluweGranen.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExactOAuth\ExactOAuth.csproj">
+      <Project>{390ce584-d2ed-41e6-bc54-6e14d049c11a}</Project>
+      <Name>ExactOAuth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SendGridWrapper\SendGridWrapper.csproj">
       <Project>{a2dda430-b1ee-4e24-958a-6f84931d2efc}</Project>
       <Name>SendGridWrapper</Name>

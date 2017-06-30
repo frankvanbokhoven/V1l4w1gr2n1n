@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOnlineImporterConsole"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendGridWrapper", "..\SendGridWrapper\SendGridWrapper.csproj", "{A2DDA430-B1EE-4E24-958A-6F84931D2EFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactOAuth", "..\ExactOAuth\ExactOAuth.csproj", "{390CE584-D2ED-41E6-BC54-6E14D049C11A}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -31,6 +33,10 @@ Global
 		{A2DDA430-B1EE-4E24-958A-6F84931D2EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2DDA430-B1EE-4E24-958A-6F84931D2EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2DDA430-B1EE-4E24-958A-6F84931D2EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{390CE584-D2ED-41E6-BC54-6E14D049C11A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390CE584-D2ED-41E6-BC54-6E14D049C11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390CE584-D2ED-41E6-BC54-6E14D049C11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390CE584-D2ED-41E6-BC54-6E14D049C11A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
