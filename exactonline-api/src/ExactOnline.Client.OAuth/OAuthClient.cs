@@ -7,7 +7,7 @@ namespace ExactOnline.Client.OAuth
 	public class OAuthClient : UserAgentClient
 	{
 		private readonly Uri _redirectUri;
-
+        public string Tokenresult = string.Empty;
 		#region Constructor
 
 		public OAuthClient(AuthorizationServerDescription serverDescription, string clientId, string clientSecret, Uri redirectUri)
@@ -52,6 +52,9 @@ namespace ExactOnline.Client.OAuth
 					loginDialog.AuthorizationUri = GetAuthorizationUri(authorization);
 					loginDialog.ShowDialog();
 					ProcessUserAuthorization(loginDialog.AuthorizationUri, authorization);
+
+                    string[] tempstringarray = loginDialog.AuthorizationUri.AbsoluteUri.Split('=');
+                    Tokenresult = tempstringarray[1];
 				}
 			}
 		}

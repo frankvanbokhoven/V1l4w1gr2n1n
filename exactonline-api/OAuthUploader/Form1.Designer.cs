@@ -41,13 +41,17 @@
             this.tbxClientID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbxmessages = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtProcessedDir = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtError = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(29, 630);
+            this.btnUpload.Location = new System.Drawing.Point(29, 692);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(75, 47);
             this.btnUpload.TabIndex = 1;
@@ -57,7 +61,7 @@
             // 
             // btnSelectfile
             // 
-            this.btnSelectfile.Location = new System.Drawing.Point(804, 250);
+            this.btnSelectfile.Location = new System.Drawing.Point(804, 312);
             this.btnSelectfile.Name = "btnSelectfile";
             this.btnSelectfile.Size = new System.Drawing.Size(75, 44);
             this.btnSelectfile.TabIndex = 0;
@@ -69,7 +73,7 @@
             // 
             this.lbxFiles.FormattingEnabled = true;
             this.lbxFiles.ItemHeight = 16;
-            this.lbxFiles.Location = new System.Drawing.Point(29, 250);
+            this.lbxFiles.Location = new System.Drawing.Point(29, 312);
             this.lbxFiles.Name = "lbxFiles";
             this.lbxFiles.Size = new System.Drawing.Size(752, 228);
             this.lbxFiles.TabIndex = 2;
@@ -79,7 +83,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(25, 495);
+            this.label1.Location = new System.Drawing.Point(25, 557);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 3;
@@ -87,6 +91,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtError);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtProcessedDir);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.tbxDescription);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.tbxRedirect);
@@ -97,7 +105,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(29, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(752, 218);
+            this.groupBox1.Size = new System.Drawing.Size(752, 269);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login info";
@@ -125,7 +133,7 @@
             this.tbxRedirect.Name = "tbxRedirect";
             this.tbxRedirect.Size = new System.Drawing.Size(464, 22);
             this.tbxRedirect.TabIndex = 5;
-            this.tbxRedirect.Text = "http://www.veluwegranen.nl";
+            this.tbxRedirect.Text = "http://localhost/Veluwegranen";
             this.tbxRedirect.TextChanged += new System.EventHandler(this.tbxRedirect_TextChanged);
             // 
             // label4
@@ -171,23 +179,55 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ClientID";
             // 
-            // lbxmessages
+            // textBox1
             // 
-            this.lbxmessages.FormattingEnabled = true;
-            this.lbxmessages.ItemHeight = 16;
-            this.lbxmessages.Location = new System.Drawing.Point(156, 532);
-            this.lbxmessages.Name = "lbxmessages";
-            this.lbxmessages.ScrollAlwaysVisible = true;
-            this.lbxmessages.Size = new System.Drawing.Size(625, 148);
-            this.lbxmessages.TabIndex = 5;
+            this.textBox1.Location = new System.Drawing.Point(163, 611);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(618, 128);
+            this.textBox1.TabIndex = 5;
+            // 
+            // txtProcessedDir
+            // 
+            this.txtProcessedDir.Location = new System.Drawing.Point(150, 199);
+            this.txtProcessedDir.Name = "txtProcessedDir";
+            this.txtProcessedDir.Size = new System.Drawing.Size(464, 22);
+            this.txtProcessedDir.TabIndex = 9;
+            this.txtProcessedDir.Text = "C:\\VeluweGranen\\ExactFiles\\Processed";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Processed dir";
+            // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(150, 241);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(464, 22);
+            this.txtError.TabIndex = 11;
+            this.txtError.Text = "C:\\VeluweGranen\\ExactFiles\\Error";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Error dir";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(906, 707);
-            this.Controls.Add(this.lbxmessages);
+            this.ClientSize = new System.Drawing.Size(906, 777);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbxFiles);
@@ -219,7 +259,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbxDescription;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox lbxmessages;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtError;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtProcessedDir;
+        private System.Windows.Forms.Label label6;
     }
 }
 
