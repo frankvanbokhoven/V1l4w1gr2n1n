@@ -1,44 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
-using ExactOnline;
 using System.Net.Http;
 using System.Net;
 using System.IO;
 using System.Xml;
+using System.Configuration;
+
 
 namespace OAuthUploader
 {
-    public partial class frmMain : Form
+    public partial class FrmOAuthUploaderMain : Form
     {
         private DotNetOpenAuth.OAuth2.IAuthorizationState AuthorisationState;
         private string AuthToken;
+        private string RefreshToken;
         private static readonly HttpClient client = new HttpClient();
-        public frmMain()
+        public FrmOAuthUploaderMain()
         {
             InitializeComponent();
         }
 
         private void btnSelectfile_Click(object sender, EventArgs e)
         {
+            lbxFiles.Items.Clear();
              OpenFileDialog theDialog = new OpenFileDialog();
-           if(Directory.Exists(@"C:\VeluweGranen\ExactFiles\ToBeProcessed"))
+            if (Directory.Exists(ConfigurationManager.AppSettings["XMLDirectoryToBeProcessed"].ToString())) // @"C:\VeluweGranen\ExactFiles\ToBeProcessed"))
             {
-                theDialog.InitialDirectory = @"C:\VeluweGranen\ExactFiles\ToBeProcessed";
+                theDialog.InitialDirectory = ConfigurationManager.AppSettings["XMLDirectoryToBeProcessed"].ToString();
             }
 
 
             theDialog.Title = "Select xml files";
             theDialog.Filter = "XML files|*.xml";
-            theDialog.InitialDirectory = @"C:\";
-            theDialog.Multiselect = true;
+             theDialog.Multiselect = true;
             lbxFiles.Items.Clear();
             DialogResult dr = theDialog.ShowDialog();
 
@@ -47,7 +43,6 @@ namespace OAuthUploader
                 // Read the files
                 foreach (String file in theDialog.FileNames)
                 {
-                    // Create a PictureBox.
                     try
                     {
                         lbxFiles.Items.Add(file);
@@ -76,6 +71,8 @@ namespace OAuthUploader
                 try
 
                 {
+                    string Password = ConfigurationManager.AppSettings["ExactPassword"].ToString();
+                    Clipboard.SetText(Password);
 
                     //        ExactOnlineClient client = new ExactOnlineClient(apiEndPoint, AccessTokenDelegate);
                     Uri re = new Uri(tbxRedirect.Text);
@@ -87,10 +84,18 @@ namespace OAuthUploader
                     oc.Authorize(ref AuthorisationState, AuthToken);
 
                     AuthToken = AuthorisationState.AccessToken;   //  oc.Tokenresult;
+                    RefreshToken = AuthorisationState.RefreshToken;
                     textBox1.Text = AuthToken;
                     Application.DoEvents();
-                    Thread.Sleep(1000);
+                    label1.ForeColor = Color.Blue;
                     label1.Text = "Logged in..";
+
+
+                    ///gerard's exact account:
+                    ///
+                    /// gerard@veluwegranen.nl
+                    /// 6713Vc09-2
+                     // Clipboard.SetText("6713Vc09-2");
 
                     if (AuthToken.Length == 0)
                     {
@@ -98,23 +103,22 @@ namespace OAuthUploader
                         return;
                     }
                     //   RefreshToken = Prompt.ShowDialog("Token", "We need the token");
+                    List<string> resultimport = new List<string>();
                     foreach (String file in lbxFiles.Items)
                     {
                         label1.Text = "Uploading: " + file;
                         try
                         {
-
-
                             Application.DoEvents();
                             XmlDocument xdoc = new XmlDocument();
                             xdoc.Load(file);
                             string xmlstring = GetXMLAsString(xdoc);
-                            postXMLData("https://start.exactonline.nl/docs/XMLUpload.aspx", xmlstring, oc);
-                            Thread.Sleep(3000);
+                            postXMLData("https://start.exactonline.nl/docs/XMLUpload.aspx?Topic=GLTransactions&_Division_=" + ConfigurationManager.AppSettings["Administration"].ToString(), xmlstring, oc, file);
                             Application.DoEvents();
 
                             string filename = Path.GetFileName(file);
                             File.Move(file, Path.Combine(txtProcessedDir.Text, filename)); // Try to move to processed
+                            resultimport.Add("Success! " + filename);
                         }
                         catch (Exception ex)
                         {
@@ -122,17 +126,19 @@ namespace OAuthUploader
                             File.Move(file, Path.Combine(txtProcessedDir.Text, filename)); // Try to move to error
 
                             MessageBox.Show("upload went wrong with file: " + file + " Exception: " + ex.Message + "  " + ex.InnerException);
-
                         }
                     }
-
-            
+                    lbxFiles.Items.Clear();
+                    lbxFiles.Items.AddRange(resultimport.ToArray());
+                    label1.ForeColor = Color.Green;
+                    label1.Text = "Finished succesfully!";            
                 }
                 catch (Exception ex)
                 {
+                    label1.ForeColor = Color.Red;
+                    label1.Text = "Errors while uploading";
                     MessageBox.Show("Something went wrong: " + ex.Message);
                     MessageBox.Show("The upload is NOT completed successfully");
-
                 }
                 finally
                 {
@@ -142,31 +148,27 @@ namespace OAuthUploader
             }
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void frmOAuthUploaderMain_Load(object sender, EventArgs e)
         {
             label1.Visible = false;
+          //  tbxClientID.Text = ConfigurationManager.AppSettings["ApplicationKey"].ToString();
+
+
         }
 
-        public string postXMLData(string destinationUrl, string requestXml, ExactOnline.Client.OAuth.OAuthClient _oc)
+        public string postXMLData(string destinationUrl, string requestXml, ExactOnline.Client.OAuth.OAuthClient _oc, string _file)
         {
-
             try
             {
-
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("{0}", destinationUrl));
                 byte[] bytes;
                 bytes = System.Text.Encoding.ASCII.GetBytes(requestXml);
                 request.ContentLength = bytes.Length;
                 request.Method = "POST";
                 request.ContentType = "text/xml; encoding='utf-8'";
-              //  request.Headers.Add("Authorization", AuthToken);
                 request.Headers.Add("Client_ID", tbxClientID.Text);
-                request.Headers.Add("grant-type", "auth_token");
-                request.Headers.Add("client_secret", tbxClientSecret.Text);
-                request.Headers.Add("Bearer", AuthToken);
-
-
-               Stream requestStream = request.GetRequestStream();
+                request.Headers.Add("authorization", "Bearer " + AuthToken);
+                Stream requestStream = request.GetRequestStream();
                 requestStream.Write(bytes, 0, bytes.Length);
                 requestStream.Close();
                 HttpWebResponse response;
@@ -181,15 +183,23 @@ namespace OAuthUploader
                     textBox1.Text += "  " + (responseStr);
                     return responseStr;
                 }
+                else
+                {
+
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong while posting the xml document: " + ex.Message + Environment.NewLine + "The upload is not completed successfully" );
- 
+
+                File.Move(Path.GetFileName(_file), Path.Combine(ConfigurationManager.AppSettings["XMLDirectoryError"].ToString(), Path.GetFileName(Path.GetFileName(_file))));
+             //    send   SendMail(mailto, "Veluwegranen", "Process file fout: " & Path.GetFileName(filename), "Exact Online Import error at processing XML Import file" & ex.Message, mailfrom)
+
+
             }
             return null;
         }
-
+    
         public string GetXMLAsString(XmlDocument myxml)
         {
 

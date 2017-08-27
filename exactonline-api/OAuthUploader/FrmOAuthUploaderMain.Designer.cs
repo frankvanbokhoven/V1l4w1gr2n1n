@@ -1,6 +1,6 @@
 ﻿namespace OAuthUploader
 {
-    partial class frmMain
+    partial class FrmOAuthUploaderMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOAuthUploaderMain));
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnSelectfile = new System.Windows.Forms.Button();
             this.lbxFiles = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtError = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtProcessedDir = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tbxDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbxRedirect = new System.Windows.Forms.TextBox();
@@ -42,10 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtProcessedDir = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtError = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +110,40 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login info";
+            // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(150, 241);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(464, 22);
+            this.txtError.TabIndex = 11;
+            this.txtError.Text = "C:\\VeluweGranen\\ExactFiles\\Error";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Error dir";
+            // 
+            // txtProcessedDir
+            // 
+            this.txtProcessedDir.Location = new System.Drawing.Point(150, 199);
+            this.txtProcessedDir.Name = "txtProcessedDir";
+            this.txtProcessedDir.Size = new System.Drawing.Size(464, 22);
+            this.txtProcessedDir.TabIndex = 9;
+            this.txtProcessedDir.Text = "C:\\VeluweGranen\\ExactFiles\\Processed";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Processed dir";
             // 
             // tbxDescription
             // 
@@ -187,41 +222,7 @@
             this.textBox1.Size = new System.Drawing.Size(618, 128);
             this.textBox1.TabIndex = 5;
             // 
-            // txtProcessedDir
-            // 
-            this.txtProcessedDir.Location = new System.Drawing.Point(150, 199);
-            this.txtProcessedDir.Name = "txtProcessedDir";
-            this.txtProcessedDir.Size = new System.Drawing.Size(464, 22);
-            this.txtProcessedDir.TabIndex = 9;
-            this.txtProcessedDir.Text = "C:\\VeluweGranen\\ExactFiles\\Processed";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 199);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 17);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Processed dir";
-            // 
-            // txtError
-            // 
-            this.txtError.Location = new System.Drawing.Point(150, 241);
-            this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(464, 22);
-            this.txtError.TabIndex = 11;
-            this.txtError.Text = "C:\\VeluweGranen\\ExactFiles\\Error";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 241);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Error dir";
-            // 
-            // frmMain
+            // FrmOAuthUploaderMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,9 +235,10 @@
             this.Controls.Add(this.btnSelectfile);
             this.Controls.Add(this.btnUpload);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "frmMain";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmOAuthUploaderMain";
             this.Text = "OAuth uploader";
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Load += new System.EventHandler(this.frmOAuthUploaderMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

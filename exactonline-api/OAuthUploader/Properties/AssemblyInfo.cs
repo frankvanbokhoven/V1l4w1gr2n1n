@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("OAuthUploader")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Yggdra OAuth uploader for Exact online")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Yggdra Solutions")]
 [assembly: AssemblyProduct("OAuthUploader")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
