@@ -323,7 +323,7 @@ Public Class frmImporterMain
                                  vbNewLine & sMessage & vbNewLine & vbNewLine
                                 'als er een melding wordt teruggemeld vanuit exact, mail hem dan, zodat ernaar gehandeld kan worden
                                 If (sMessage.ToLower().Contains("error")) Or (sMessage.ToLower().Contains("warning")) Or (sMessage.ToLower().Contains("problem")) Then
-                                    SendMail(mailto, "Veluwegranen", "File: " & sFile, sMessage, mailfrom)
+                                    '    SendMail(mailto, "Veluwegranen", "File: " & sFile, sMessage, mailfrom)
                                     System.Threading.Thread.Sleep(3000)
                                 End If
                             End If
@@ -342,18 +342,17 @@ Public Class frmImporterMain
                 Catch ex As Exception
                     '  MsgBox("Error in method ProcessMultiple: " & ex.Message, , Title)
                     File.Move(filename, Path.Combine(txtErrorDir.Text, Path.GetFileName(filename)))
-                    SendMail(mailto, "Veluwegranen", "Process file fout: " & Path.GetFileName(filename), "Exact Online Import error at processing XML Import file" & ex.Message, mailfrom)
+                    '     SendMail(mailto, "Veluwegranen", "Process file fout: " & Path.GetFileName(filename), "Exact Online Import error at /processing XML Import file" & ex.Message, mailfrom)
                     System.Threading.Thread.Sleep(3000)
                 End Try
             Next
             '' alleen als er  wat geprocessed is, hoeft er een mail gestuurd te worden.
             If (somethingprocessed = True) Then
-                SendMail(mailto, "VeluweGranen", "Process summary " & DateTime.Now.ToString("dd/MMM/yyyy hh:mm"), "These files have been processed on " &
-              DateTime.Now.ToString("dd/MMM/yyyy hh:mm") & Environment.NewLine & Environment.NewLine & sSummary, mailfrom)
+                '   SendMail(mailto, "VeluweGranen", "Process summary " & DateTime.Now.ToString("dd/MMM/yyyy hh:mm"), "These files have been processed on " &  DateTime.Now.ToString("dd/MMM/yyyy hh:mm") & Environment.NewLine & Environment.NewLine & sSummary, mailfrom)
             End If
             ''   System.Threading.Thread.Sleep(3000)
         Catch ex As Exception
-            SendMail(mailto, "Veluwegranen", "This run encountered a problem.", "Exact Online Import problem" & ex.Message, mailfrom)
+            '  SendMail(mailto, "Veluwegranen", "This run encountered a problem.", "Exact Online Import problem" & ex.Message, mailfrom)
             System.Threading.Thread.Sleep(3000)
         End Try
 
@@ -545,7 +544,7 @@ Public Class frmImporterMain
                 Me.Height += iShiftSize + 30
             End If
         Catch ex As Exception
-            SendMail(mailto, "Veluwegranen", "Error met exactonline importer", "Exact Online Import error at processing XML Import file. Something is wrond with parameters" & ex.Message, "mailfrom")
+            '  SendMail(mailto, "Veluwegranen", "Error met exactonline importer", "Exact Online Import error at processing XML Import file. Something is wrond with parameters" & ex.Message, "mailfrom")
         End Try
     End Sub
 
@@ -644,7 +643,7 @@ Public Class frmImporterMain
         asd.AuthorizationEndpoint = New Uri("https://start.exactonline.nl/api/oauth2/auth")
         asd.TokenEndpoint = New Uri("https://start.exactonline.nl/oauth2/token")
 
-        Dim oc As OAuthClient = New OAuthClient(asd, "{cb715f5d-fe30-4595-81ff-c00b414a73e2", "dtsaOssnJJhY", New Uri("http://www.veluwegranen.nl"))
+        '   Dim oc As OAuthClient = New OAuthClient(asd, "{cb715f5d-fe30-4595-81ff-c00b414a73e2", "dtsaOssnJJhY", New Uri("http://www.veluwegranen.nl"))
 
         '  Dim ur As Uri = New Uri("test/fds")
         '   Dim loginfrm As ExactOnline.Client.OAuth.OAuthClient = New ExactOnline.Client.OAuth.OAuthClient(dr, "id", "secret", ur)
