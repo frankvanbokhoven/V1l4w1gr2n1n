@@ -47,11 +47,13 @@
             this.lbxFiles = new System.Windows.Forms.ListBox();
             this.btnSelectfile = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.btnEditIniFile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEditIniFile);
             this.groupBox1.Controls.Add(this.txtError);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtProcessedDir);
@@ -73,10 +75,13 @@
             // 
             // txtError
             // 
+            this.txtError.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtError.Location = new System.Drawing.Point(150, 241);
             this.txtError.Name = "txtError";
+            this.txtError.ReadOnly = true;
             this.txtError.Size = new System.Drawing.Size(464, 22);
             this.txtError.TabIndex = 11;
+            this.txtError.TabStop = false;
             this.txtError.Text = "C:\\VeluweGranen\\ExactFiles\\Error";
             // 
             // label7
@@ -90,10 +95,13 @@
             // 
             // txtProcessedDir
             // 
+            this.txtProcessedDir.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtProcessedDir.Location = new System.Drawing.Point(150, 199);
             this.txtProcessedDir.Name = "txtProcessedDir";
+            this.txtProcessedDir.ReadOnly = true;
             this.txtProcessedDir.Size = new System.Drawing.Size(464, 22);
             this.txtProcessedDir.TabIndex = 9;
+            this.txtProcessedDir.TabStop = false;
             this.txtProcessedDir.Text = "C:\\VeluweGranen\\ExactFiles\\Processed";
             // 
             // label6
@@ -107,10 +115,13 @@
             // 
             // tbxDescription
             // 
+            this.tbxDescription.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbxDescription.Location = new System.Drawing.Point(150, 36);
             this.tbxDescription.Name = "tbxDescription";
+            this.tbxDescription.ReadOnly = true;
             this.tbxDescription.Size = new System.Drawing.Size(464, 22);
             this.tbxDescription.TabIndex = 7;
+            this.tbxDescription.TabStop = false;
             this.tbxDescription.Text = "ImportExport_Agrosirius";
             // 
             // label5
@@ -124,10 +135,13 @@
             // 
             // tbxRedirect
             // 
+            this.tbxRedirect.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbxRedirect.Location = new System.Drawing.Point(150, 161);
             this.tbxRedirect.Name = "tbxRedirect";
+            this.tbxRedirect.ReadOnly = true;
             this.tbxRedirect.Size = new System.Drawing.Size(464, 22);
             this.tbxRedirect.TabIndex = 5;
+            this.tbxRedirect.TabStop = false;
             this.tbxRedirect.Text = "http://localhost/Veluwegranen";
             // 
             // label4
@@ -141,18 +155,24 @@
             // 
             // tbxClientSecret
             // 
+            this.tbxClientSecret.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbxClientSecret.Location = new System.Drawing.Point(150, 121);
             this.tbxClientSecret.Name = "tbxClientSecret";
+            this.tbxClientSecret.ReadOnly = true;
             this.tbxClientSecret.Size = new System.Drawing.Size(464, 22);
             this.tbxClientSecret.TabIndex = 3;
+            this.tbxClientSecret.TabStop = false;
             this.tbxClientSecret.Text = "dtsaOssnJJhY";
             // 
             // tbxClientID
             // 
+            this.tbxClientID.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbxClientID.Location = new System.Drawing.Point(150, 78);
             this.tbxClientID.Name = "tbxClientID";
+            this.tbxClientID.ReadOnly = true;
             this.tbxClientID.Size = new System.Drawing.Size(464, 22);
             this.tbxClientID.TabIndex = 2;
+            this.tbxClientID.TabStop = false;
             this.tbxClientID.Text = "{cb715f5d-fe30-4595-81ff-c00b414a73e2}";
             // 
             // label3
@@ -180,6 +200,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(618, 128);
             this.textBox1.TabIndex = 10;
+            this.textBox1.TabStop = false;
             // 
             // label1
             // 
@@ -200,13 +221,14 @@
             this.lbxFiles.Name = "lbxFiles";
             this.lbxFiles.Size = new System.Drawing.Size(752, 228);
             this.lbxFiles.TabIndex = 8;
+            this.lbxFiles.TabStop = false;
             // 
             // btnSelectfile
             // 
             this.btnSelectfile.Location = new System.Drawing.Point(787, 307);
             this.btnSelectfile.Name = "btnSelectfile";
             this.btnSelectfile.Size = new System.Drawing.Size(75, 44);
-            this.btnSelectfile.TabIndex = 6;
+            this.btnSelectfile.TabIndex = 0;
             this.btnSelectfile.Text = "File...";
             this.btnSelectfile.UseVisualStyleBackColor = true;
             this.btnSelectfile.Click += new System.EventHandler(this.btnSelectfile_Click);
@@ -216,10 +238,20 @@
             this.btnUpload.Location = new System.Drawing.Point(12, 687);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(75, 47);
-            this.btnUpload.TabIndex = 7;
+            this.btnUpload.TabIndex = 2;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // btnEditIniFile
+            // 
+            this.btnEditIniFile.Location = new System.Drawing.Point(649, 36);
+            this.btnEditIniFile.Name = "btnEditIniFile";
+            this.btnEditIniFile.Size = new System.Drawing.Size(75, 62);
+            this.btnEditIniFile.TabIndex = 3;
+            this.btnEditIniFile.Text = "Edit\r\nInifile\r\n";
+            this.btnEditIniFile.UseVisualStyleBackColor = true;
+            this.btnEditIniFile.Click += new System.EventHandler(this.btnEditIniFile_Click);
             // 
             // FrmMain
             // 
@@ -266,6 +298,7 @@
         private System.Windows.Forms.ListBox lbxFiles;
         private System.Windows.Forms.Button btnSelectfile;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnEditIniFile;
     }
 }
 

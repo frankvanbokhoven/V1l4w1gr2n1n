@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -74,12 +76,32 @@ namespace ExactonlineOAuthImporter
         {
             label1.Visible = false;
             //  tbxClientID.Text = ConfigurationManager.AppSettings["ApplicationKey"].ToString();
+            string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            this.Text = "Exact online importer " + version;
+
 
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
             IniFile ini = new IniFile(Path.Combine(Application.StartupPath, "Exact.ini"));
+            if(!Directory.Exists(ini.IniReadValue("appsettings", "XMLDirectoryError")))
+            {
+                MessageBox.Show("Specify a valid directory for the errorfiles first (XMLDirectoryError)");
+                return;
+            }
+            if (!Directory.Exists(ini.IniReadValue("appsettings", "XMLDirectoryProcessed")))
+            {
+                MessageBox.Show("Specify a valid directory for the processed files first (XMLDirectoryProcessed)");
+                return;
+            }
+            if (!Directory.Exists(ini.IniReadValue("appsettings", "XMLDirectoryToBeProcessed")))
+            {
+                MessageBox.Show("Specify a valid directory for the TO BE processed files first (XMLDirectoryToBeProcessed)");
+                return;
+            }
+
             if (lbxFiles.Items.Count > 0)
             {
                 btnUpload.Enabled = false;
@@ -89,7 +111,7 @@ namespace ExactonlineOAuthImporter
                 try
 
                 {
-                    string Password =  ini.IniReadValue("appsettings", "Password");
+                    string Password = ini.IniReadValue("appsettings", "Password");
 
                     Clipboard.SetText(Password);
 
@@ -102,7 +124,7 @@ namespace ExactonlineOAuthImporter
 
                     oc.Authorize(ref AuthorisationState, AuthToken);
 
-                    AuthToken = AuthorisationState.AccessToken;   //  oc.Tokenresult;
+                    AuthToken = AuthorisationState.AccessToken;   //  oc.Toekenresult;
                     RefreshToken = AuthorisationState.RefreshToken;
                     textBox1.Text = AuthToken;
                     Application.DoEvents();
@@ -123,41 +145,59 @@ namespace ExactonlineOAuthImporter
                     }
                     //   RefreshToken = Prompt.ShowDialog("Token", "We need the token");
                     List<string> resultimport = new List<string>();
+                    int Waitcounter = 0;
                     foreach (String file in lbxFiles.Items)
                     {
                         label1.Text = "Uploading: " + file;
+                        Waitcounter++;
+                        if (Waitcounter > 20)
+                        {
+                            System.Threading.Thread.Sleep(25000); //wacht 25 seconden;
+                            RefreshToken = AuthorisationState.RefreshToken;
+                            Waitcounter = 0;
+                        }
                         try
                         {
                             Application.DoEvents();
                             XmlDocument xdoc = new XmlDocument();
                             xdoc.Load(file);
                             string xmlstring = GetXMLAsString(xdoc);
-                            postXMLData("https://start.exactonline.nl/docs/XMLUpload.aspx?Topic=GLTransactions&_Division_=" + ini.IniReadValue("appsettings", "ExactPassword"), xmlstring, oc, file);
+                            postXMLData("https://start.exactonline.nl/docs/XMLUpload.aspx?Topic=GLTransactions&_Division_=" + ini.IniReadValue("appsettings", "Administration"), xmlstring, oc, file);
                             Application.DoEvents();
 
                             string filename = Path.GetFileName(file);
                             File.Move(file, Path.Combine(txtProcessedDir.Text, filename)); // Try to move to processed
                             resultimport.Add("Success! " + filename);
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            string filename = Path.GetFileName(file);
-                            File.Move(file, Path.Combine(txtProcessedDir.Text, filename)); // Try to move to error
+                            //     string filename = Path.GetFileName(file);
+                            //        File.Move(file, Path.Combine(txtError.Text, filename)); // Try to move to error
 
-                            MessageBox.Show("upload went wrong with file: " + file + " Exception: " + ex.Message + "  " + ex.InnerException);
+                            //       MessageBox.Show("upload went wrong with file: " + file + " Exception: " + ex.Message + "  " + ex.InnerException);
+                            //         SendGridWrapper sg = new SendGridWrapper();
+                            //         sg.SendMail(ini.IniReadValue("appsettings", "mailto"), "Exact importer gebruiker", "Exception tijdens uploaden", "De upload kwam een fout tegen in de volgende file: " + file + Environment.NewLine + "Foutmelding: " + ex.Message, ini.IniReadValue("appsettings", "mailfrom"));
+
                         }
                     }
                     lbxFiles.Items.Clear();
                     lbxFiles.Items.AddRange(resultimport.ToArray());
                     label1.ForeColor = Color.Green;
                     label1.Text = "Finished succesfully!";
+                    SendGridWrapper sg = new SendGridWrapper();
+                    sg.SendMail(ini.IniReadValue("appsettings", "mailto"), "Exact importer gebruiker", "De upload was succesvol!", "De upload was succesvol op: "
+                        + DateTime.Now.ToString("D")
+                        + Environment.NewLine + "File lijst:"
+                        + Environment.NewLine + resultimport.ToString(), ini.IniReadValue("appsettings", "mailfrom"));
+
                 }
                 catch (Exception ex)
                 {
                     label1.ForeColor = Color.Red;
-                    label1.Text = "Errors while uploading";
-                    MessageBox.Show("Something went wrong: " + ex.Message);
-                    MessageBox.Show("The upload is NOT completed successfully");
+                    label1.Text = "Errors while uploading (email sent)";
+                    //   MessageBox.Show("Something went wrong: " + ex.Message);
+                    SendGridWrapper sg = new SendGridWrapper();
+                    sg.SendMail(ini.IniReadValue("appsettings", "mailto"), "Exact importer gebruiker", "Exception tijdens uploaden", "De upload kwam een fout tegen" + Environment.NewLine + "Foutmelding: " + ex.Message, ini.IniReadValue("appsettings", "mailfrom"));
                 }
                 finally
                 {
@@ -165,12 +205,16 @@ namespace ExactonlineOAuthImporter
                     label1.Visible = false;
                 }
             }
+            else
+            {
+                MessageBox.Show("First select at least one file");
+            }
         }
 
         public string postXMLData(string destinationUrl, string requestXml, ExactOnline.Client.OAuth.OAuthClient _oc, string _file)
         {
             IniFile ini = new IniFile(Path.Combine(Application.StartupPath, "Exact.ini"));
-
+            Application.DoEvents();
             try
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("{0}", destinationUrl));
@@ -203,7 +247,10 @@ namespace ExactonlineOAuthImporter
             }
             catch (Exception ex)
             {
+                //als het fout gaat, verplaats de file dan naar de error directory
                 MessageBox.Show("Something went wrong while posting the xml document: " + ex.Message + Environment.NewLine + "The upload is not completed successfully");
+                SendGridWrapper sg = new SendGridWrapper();
+                sg.SendMail(ini.IniReadValue("appsettings", "mailto"), "Exact importer gebruiker", "Exception tijdens uploaden", "De upload kwam een fout tegen in de volgende file: " + _file + Environment.NewLine + "Foutmelding: " + ex.Message, ini.IniReadValue("appsettings", "mailfrom"));
 
                 File.Move(Path.GetFileName(_file), Path.Combine(ini.IniReadValue("appsettings", "XMLDirectoryError"), Path.GetFileName(Path.GetFileName(_file))));
                 //    send   SendMail(mailto, "Veluwegranen", "Process file fout: " & Path.GetFileName(filename), "Exact Online Import error at processing XML Import file" & ex.Message, mailfrom)
@@ -224,5 +271,16 @@ namespace ExactonlineOAuthImporter
             return str;
         }
 
+        private void btnEditIniFile_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(Path.Combine(Application.StartupPath, "Exact.ini")))
+            {
+                  
+                        Process.Start(Path.Combine(Application.StartupPath, "Exact.ini"));
+
+                   
+                
+            }
+        }
     }
 }

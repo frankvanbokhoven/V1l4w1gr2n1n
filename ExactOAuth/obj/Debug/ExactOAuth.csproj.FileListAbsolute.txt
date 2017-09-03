@@ -52,8 +52,8 @@ C:\VeluweGranen\GitSources\ExactOAuth\bin\Debug\System.Net.Http.xml
 C:\VeluweGranen\GitSources\ExactOAuth\bin\Debug\System.Net.Http.WebRequest.xml
 C:\VeluweGranen\GitSources\ExactOAuth\bin\Debug\Org.Mentalis.Security.Cryptography.xml
 C:\VeluweGranen\GitSources\ExactOAuth\bin\Debug\Mono.Math.xml
-C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.csprojResolveAssemblyReference.cache
 C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.LoginForm.resources
 C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.csproj.GenerateResource.Cache
 C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.dll
 C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.pdb
+C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.csprojResolveAssemblyReference.cache

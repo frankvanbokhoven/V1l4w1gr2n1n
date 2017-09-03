@@ -213,7 +213,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SendgridWrapper.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="dlgMessages.resx">
@@ -238,10 +237,6 @@
     <ProjectReference Include="..\ExactOAuth\ExactOAuth.csproj">
       <Project>{390ce584-d2ed-41e6-bc54-6e14d049c11a}</Project>
       <Name>ExactOAuth</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SendGridWrapper\SendGridWrapper.csproj">
-      <Project>{a2dda430-b1ee-4e24-958a-6f84931d2efc}</Project>
-      <Name>SendGridWrapper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -125,16 +125,11 @@ C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.OpenIdInfoCard.UI
 C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.OpenIdOAuth.dll
 C:\VeluweGranen\GitSources\Exact_Importer\debug\ExactOAuth.dll
 C:\VeluweGranen\GitSources\Exact_Importer\debug\log4net.dll
-C:\VeluweGranen\GitSources\Exact_Importer\debug\SendGridWrapper.dll
 C:\VeluweGranen\GitSources\Exact_Importer\debug\System.Net.Http.dll
 C:\VeluweGranen\GitSources\Exact_Importer\debug\System.Net.Http.WebRequest.dll
-C:\VeluweGranen\GitSources\Exact_Importer\debug\SendGrid.dll
 C:\VeluweGranen\GitSources\Exact_Importer\debug\Org.Mentalis.Security.Cryptography.dll
-C:\VeluweGranen\GitSources\Exact_Importer\debug\Newtonsoft.Json.dll
-C:\VeluweGranen\GitSources\Exact_Importer\debug\SendGrid.CSharp.HTTP.Client.dll
 C:\VeluweGranen\GitSources\Exact_Importer\debug\Mono.Math.dll
 C:\VeluweGranen\GitSources\Exact_Importer\debug\ExactOAuth.pdb
-C:\VeluweGranen\GitSources\Exact_Importer\debug\SendGridWrapper.pdb
 C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.Core.xml
 C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.Core.UI.xml
 C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.InfoCard.xml
@@ -157,7 +152,6 @@ C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.OpenId.RelyingPar
 C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.OpenId.UI.xml
 C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.OpenIdInfoCard.UI.xml
 C:\VeluweGranen\GitSources\Exact_Importer\debug\DotNetOpenAuth.OpenIdOAuth.xml
-C:\VeluweGranen\GitSources\Exact_Importer\debug\ExactOnline.Client.OAuth.pdb
 C:\VeluweGranen\GitSources\Exact_Importer\debug\System.Net.Http.xml
 C:\VeluweGranen\GitSources\Exact_Importer\debug\System.Net.Http.WebRequest.xml
 C:\VeluweGranen\GitSources\Exact_Importer\debug\Org.Mentalis.Security.Cryptography.xml
