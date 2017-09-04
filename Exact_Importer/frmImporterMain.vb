@@ -6,7 +6,6 @@ Imports System.Configuration
 Imports System.Threading.Thread
 'Imports log4net
 Imports System.Net.Mail
-Imports SendGridWrapper.SendGridWrapper
 Imports ExactOnline.Client.OAuth.OAuthClient
 Imports ExactOAuth
 Imports ExactOAuth.OAuthClient

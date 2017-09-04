@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DotNetOpenAuth.OAuth2;
-using System;
 
 namespace ExactOAuth
 {
