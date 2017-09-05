@@ -1,5 +1,5 @@
 #define MyAppName "VG_ExactOnlineImporter"
-#define MyAppVersion "1.2015.10.8"
+#define MyAppVersion "1.2017.10.8"
 #define MyAppPublisher "Yggdra Solutions"
 #define MyAppURL "http://www.yggdra.nl"
 #define MyAppExeName "VG_ExactOnlineImporter.exe"
@@ -28,7 +28,7 @@ UserInfoPage=true
 VersionInfoCompany=Veluwe Granen
 VersionInfoDescription=Veluwe Granen
 VersionInfoTextVersion=Veluwe Granen
-VersionInfoCopyright=Copyright 2015 Veluwe Granen
+VersionInfoCopyright=Copyright 2017 Yggdra
 VersionInfoProductName=ExactOnlineVeluweGranen
 ;VersionInfoProductVersion=MyAppVersion
 OutputDir=D:\veluwegranen\Setup

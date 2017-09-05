@@ -1,5 +1,5 @@
 #define MyAppName "Exact OAuth Importer"
-#define MyAppVersion "4.2017.09.04"
+#define MyAppVersion "4.2017.09.05"
 #define MyAppPublisher "Yggdra Solutions"
 #define MyAppURL "http://www.yggdra.nl"
 #define MyAppExeName "ExactonlineOAuthImporter.exe"

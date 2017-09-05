@@ -8,7 +8,7 @@ namespace ExactonlineOAuthImporter
 {
     public class SendGridWrapper
     {
-        private const string cFromEmail = "support@activenoise.audio";
+        private const string cFromEmail = "support@yggdra.nl";
         public SendGridWrapper()
         {
 
@@ -34,7 +34,7 @@ namespace ExactonlineOAuthImporter
                 String subject = _subject;
                 SendGrid.Helpers.Mail.Email to = new SendGrid.Helpers.Mail.Email(_to);
                 SendGrid.Helpers.Mail.Content content = new SendGrid.Helpers.Mail.Content("text/plain", _body + Environment.NewLine +
-                    String.Format("{0}{0} Sender info: {0}Name: {1} {0}Mailadress: {2}{0}", Environment.NewLine, _toName, _to));
+                    String.Format("{0}{0} Sender info: {0}Name: {1} {0}{3}Mailadress: {2}{0}", Environment.NewLine, _toName, _to, Environment.NewLine));
 
                 SendGrid.Helpers.Mail.Mail mail = new SendGrid.Helpers.Mail.Mail(from, subject, to, content);
                 SendGrid.Helpers.Mail.Email email = new SendGrid.Helpers.Mail.Email(cFromEmail);

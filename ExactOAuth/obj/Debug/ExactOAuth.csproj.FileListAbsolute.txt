@@ -56,3 +56,4 @@ C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.LoginForm.resources
 C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.csproj.GenerateResource.Cache
 C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.dll
 C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.pdb
+C:\VeluweGranen\GitSources\ExactOAuth\obj\Debug\ExactOAuth.csprojResolveAssemblyReference.cache

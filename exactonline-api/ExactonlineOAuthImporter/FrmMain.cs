@@ -79,7 +79,13 @@ namespace ExactonlineOAuthImporter
             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             this.Text = "Exact online importer " + version;
-
+            IniFile ini = new IniFile(Path.Combine(Application.StartupPath, "Exact.ini"));
+            tbxDescription.Text = ini.IniReadValue("appsettings", "ExactOmschrijving");
+            tbxClientID.Text = ini.IniReadValue("appsettings", "ApplicationKey");
+            tbxClientSecret.Text = ini.IniReadValue("appsettings", "ClientSecret");
+            tbxRedirect.Text = ini.IniReadValue("appsettings", "ExactOnlineURL");
+            txtProcessedDir.Text = ini.IniReadValue("appsettings", "XMLDirectoryProcessed");
+            txtError.Text = ini.IniReadValue("appsettings", "XMLDirectoryError");  
 
         }
 
@@ -267,7 +273,7 @@ namespace ExactonlineOAuthImporter
             XmlTextWriter tx = new XmlTextWriter(sw);
             myxml.WriteTo(tx);
 
-            string str = sw.ToString();// 
+            string str = sw.ToString(); 
             return str;
         }
 
