@@ -85,7 +85,8 @@ namespace ExactonlineOAuthImporter
             tbxClientSecret.Text = ini.IniReadValue("appsettings", "ClientSecret");
             tbxRedirect.Text = ini.IniReadValue("appsettings", "ExactOnlineURL");
             txtProcessedDir.Text = ini.IniReadValue("appsettings", "XMLDirectoryProcessed");
-            txtError.Text = ini.IniReadValue("appsettings", "XMLDirectoryError");  
+            txtError.Text = ini.IniReadValue("appsettings", "XMLDirectoryError");
+            tbxRedirect.Text = ini.IniReadValue("appsettings", "RedirectURL");
 
         }
 
@@ -152,6 +153,7 @@ namespace ExactonlineOAuthImporter
                     //   RefreshToken = Prompt.ShowDialog("Token", "We need the token");
                     List<string> resultimport = new List<string>();
                     int Waitcounter = 0;
+                    string reportstring = "";
                     foreach (String file in lbxFiles.Items)
                     {
                         label1.Text = "Uploading: " + file;
@@ -174,10 +176,11 @@ namespace ExactonlineOAuthImporter
                             string filename = Path.GetFileName(file);
                             File.Move(file, Path.Combine(txtProcessedDir.Text, filename)); // Try to move to processed
                             resultimport.Add("Success! " + filename);
+                            reportstring += Environment.NewLine + "Succes! " + filename;
                         }
                         catch (Exception)
                         {
-                            //     string filename = Path.GetFileName(file);
+                                string filename = Path.GetFileName(file);
                             //        File.Move(file, Path.Combine(txtError.Text, filename)); // Try to move to error
 
                             //       MessageBox.Show("upload went wrong with file: " + file + " Exception: " + ex.Message + "  " + ex.InnerException);
@@ -191,10 +194,10 @@ namespace ExactonlineOAuthImporter
                     label1.ForeColor = Color.Green;
                     label1.Text = "Finished succesfully!";
                     SendGridWrapper sg = new SendGridWrapper();
-                    sg.SendMail(ini.IniReadValue("appsettings", "mailto"), "Exact importer gebruiker", "De upload was succesvol!", "De upload was succesvol op: "
+                    sg.SendMail(ini.IniReadValue("appsettings", "mailto"), "Exact importer gebruiker", "De upload was succesvol op " + DateTime.Now.ToString("D"), "De upload was succesvol op: "
                         + DateTime.Now.ToString("D")
                         + Environment.NewLine + "File lijst:"
-                        + Environment.NewLine + resultimport.ToString(), ini.IniReadValue("appsettings", "mailfrom"));
+                        + Environment.NewLine + reportstring, ini.IniReadValue("appsettings", "mailfrom"));
 
                 }
                 catch (Exception ex)

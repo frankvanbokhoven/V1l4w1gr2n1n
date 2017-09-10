@@ -8,7 +8,7 @@ namespace ExactonlineOAuthImporter
 {
     public class SendGridWrapper
     {
-        private const string cFromEmail = "support@yggdra.nl";
+        private const string cFromEmail = "support@essaver.net";
         public SendGridWrapper()
         {
 
