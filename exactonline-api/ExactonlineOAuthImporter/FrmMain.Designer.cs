@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEditIniFile = new System.Windows.Forms.Button();
             this.txtError = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtProcessedDir = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.lbxFiles = new System.Windows.Forms.ListBox();
             this.btnSelectfile = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
-            this.btnEditIniFile = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,16 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login info";
+            // 
+            // btnEditIniFile
+            // 
+            this.btnEditIniFile.Location = new System.Drawing.Point(649, 36);
+            this.btnEditIniFile.Name = "btnEditIniFile";
+            this.btnEditIniFile.Size = new System.Drawing.Size(75, 62);
+            this.btnEditIniFile.TabIndex = 3;
+            this.btnEditIniFile.Text = "Edit\r\nInifile\r\n";
+            this.btnEditIniFile.UseVisualStyleBackColor = true;
+            this.btnEditIniFile.Click += new System.EventHandler(this.btnEditIniFile_Click);
             // 
             // txtError
             // 
@@ -242,16 +252,6 @@
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            // 
-            // btnEditIniFile
-            // 
-            this.btnEditIniFile.Location = new System.Drawing.Point(649, 36);
-            this.btnEditIniFile.Name = "btnEditIniFile";
-            this.btnEditIniFile.Size = new System.Drawing.Size(75, 62);
-            this.btnEditIniFile.TabIndex = 3;
-            this.btnEditIniFile.Text = "Edit\r\nInifile\r\n";
-            this.btnEditIniFile.UseVisualStyleBackColor = true;
-            this.btnEditIniFile.Click += new System.EventHandler(this.btnEditIniFile_Click);
             // 
             // FrmMain
             // 
