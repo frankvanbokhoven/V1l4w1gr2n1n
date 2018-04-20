@@ -170,7 +170,7 @@ namespace ExactonlineOAuthImporter
                             XmlDocument xdoc = new XmlDocument();
                             xdoc.Load(file);
                             string xmlstring = GetXMLAsString(xdoc);
-                            postXMLData("https://start.exactonline.nl/docs/XMLUpload.aspx?Topic=GLTransactions&_Division_=" + ini.IniReadValue("appsettings", "Administration"), xmlstring, oc, file);
+                            postXMLData("https://start.exactonline.nl/docs/XMLUpload.aspx?forece_login=0&Topic=GLTransactions&_Division_=" + ini.IniReadValue("appsettings", "Administration"), xmlstring, oc, file);
                             Application.DoEvents();
 
                             string filename = Path.GetFileName(file);
@@ -234,6 +234,7 @@ namespace ExactonlineOAuthImporter
                 request.ContentType = "text/xml; encoding='utf-8'";
                 request.Headers.Add("Client_ID", tbxClientID.Text);
                 request.Headers.Add("authorization", "Bearer " + AuthToken);
+                request.Headers.Add("force_login", "0");
                 Stream requestStream = request.GetRequestStream();
                 requestStream.Write(bytes, 0, bytes.Length);
                 requestStream.Close();
